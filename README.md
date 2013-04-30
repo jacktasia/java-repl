@@ -1,7 +1,7 @@
 java-repl
 =========
 
-javarepl is an experimental REPL for Java.
+java-repl is an experimental REPL for Java.
 
 Why?
 ----
@@ -15,15 +15,16 @@ What about beanshell & other JVM shells?
 
 I could never get beanshell to work correctly. I think it's just out of date. As for the shells that other JVM languages have (groovy, scala, etc)
 ...these probably work just fine for most people, that want dynamic access to JVM libraries, but I like testing EXACTLY what I am trying to do. Additionally, when
-stuff fails I getting the "real" error message. In other words, seeing how stuff breaks is just as important to me as confirming something works.
+stuff fails I like getting the "real" error message. In other words, seeing how stuff breaks is just as important to me as confirming something works.
 
 
 How is this different from "real" REPLs?
 ----------------------------------------
 
-Since java is a complied/static language a traditional REPL just isn't possible. java-repl is essentially just piping your code into a simple `main` method template.
-Then it attempts to compile that file and if that works run it. Yes, that means it's running ALL valid code EVERY time you run a command.
-
+Since java is a complied/static language a traditional REPL just isn't possible. java-repl is essentially just injecting your code into a simple `main` method template.
+Then it attempts to compile that file and if that works run it. Yes, that means it's running ALL valid code EVERY time you run a command. This is why the `command` section below 
+has a number of features (`i`, `r`, `runonce`) that are unnecessary with real REPLs. These quickly get old. I discourage too much time spend in java-repl. It's meant for checking
+something quickly and moving on...
 
 
 Requires
@@ -83,9 +84,9 @@ a,b,c
 
 The idea is that your `.javarepl` would contain your standard toolkit of code. So you can easily use them when hacking on a problem.
 
-Alternatively, and perhaps more often, you may want a specifc `.repl` file. To use a `.repl`on a per project basis pass it as the first argument:
+Alternatively, and perhaps more often, you may want a specifc `.repl` file. To use a `.repl`on a per project basis; pass it as the first argument:
 
-`java -jar javarepl.jar myproject.repl`
+`java -jar java-repl.jar myproject.repl`
 
 Commands
 --------
@@ -150,3 +151,8 @@ Commands
     </td>
   </tr>
 </table> 
+
+Tests
+-----
+
+Top of my TODO list. Please feel free to fork and get them started!
