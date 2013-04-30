@@ -43,11 +43,6 @@ Create the java-repl jar (in `target` folder)
 
 `ant`
 
-Download JAR
-------------
-
-Too lazy to compile your own jar? Download a recent jar ...but keep in mind you still need the JDK (since it will be compiling your code in the background)
-
 
 Running
 -------
