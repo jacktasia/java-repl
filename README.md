@@ -21,9 +21,9 @@ stuff fails I like getting the "real" error message. In other words, seeing how 
 How is this different from "real" REPLs?
 ----------------------------------------
 
-Since java is a complied/static language a traditional REPL just isn't possible. java-repl is essentially just injecting your code into a simple `main` method template.
+Since Java is a complied/static language a traditional REPL just isn't possible. java-repl is essentially just injecting your code into a simple `main` method template.
 Then it attempts to compile that file and if that works run it. Yes, that means it's running ALL valid code EVERY time you run a command. This is why the `command` section below 
-has a number of features (`i`, `r`, `runonce`) that are unnecessary with real REPLs. These quickly get old. I discourage too much time spend in java-repl. It's meant for checking
+has a number of features (like `i`, `r`, `runonce`) that are unnecessary with real REPLs. These quickly get old. I discourage too much time spent in java-repl. It's meant for checking
 something quickly and moving on...
 
 
