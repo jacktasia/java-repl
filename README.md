@@ -150,4 +150,4 @@ Commands
 Tests
 -----
 
-Top of my TODO list. Please feel free to fork and get them started!
+Top of my TODO list. Please feel free to fork and add more!
