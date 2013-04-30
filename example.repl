@@ -1,2 +1,2 @@
-addjar build/jar/javarepl.jar
-import com.google.common.io.*;
+addjar /home/jack/.m2/repository/com/google/guava/guava/14.0.1/guava-14.0.1.jar
+import com.google.common.base.*;
