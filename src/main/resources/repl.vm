@@ -1,0 +1,23 @@
+
+#foreach( $importLine in $importLines )
+	$importLine
+#end
+
+public class ReplTmpInstance { // TODO: 1) println last line, 2) auto handle exceptions
+
+	// TODO: make a better version of this with generics?a
+	public static void p(String msg) {
+		System.out.println(msg);
+	}
+
+	public static void main(String[] args) {
+		#foreach( $codeLine in $codeLines )
+			$codeLine
+		#end
+	}
+
+	public static void outputToString(Object o) {
+		System.out.println(o.toString());
+	}
+
+}

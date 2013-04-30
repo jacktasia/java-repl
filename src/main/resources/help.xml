@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<config>
+
+	<commands>
+		<command>addcp</command>
+		<command>addjar</command>
+		<command>addline</command>
+		<command>clear</command>
+		<command>code</command>
+		<command>i</command>
+		<command>r</command>
+		<command>run</command>
+		<command>runonce</command>
+
+	</commands>
+
+	<defs>
+		<addcp>
+			<description>add a directory to class path (requires full path)</description>
+			<example>addcp /home/jack/some_classes/"</example>
+		</addcp>
+
+		<addjar>
+			<description>add a jar to class path (requires full path)</description>
+			<example>addjar /home/jack/libs/guava.jar</example>
+		</addjar>
+
+		<addline>
+			<description>add a line of code for config file (same as entering code at prompt)</description>
+			<example>addline i++;</example>
+		</addline>
+
+		<clear>
+			<description>clear the screen</description>
+			<example></example>
+		</clear>
+		
+		<code>
+			<description>view current valid code (what would run with "run")</description>
+			<example></example>
+		</code>
+
+		<i>
+			<description>[i]nsert at passed index, if no index passed runs "code"</description>
+			<example>i:1:System.out.println("this becomes the first line");</example>
+		</i>
+
+		<r>
+			<description>[r]eplace OR [r]emoves at passed index</description>
+			<example>r:1:System.out.println("this replaces the first line")</example>
+		</r>
+
+		<run>
+			<description>re-runs last time (only running validated code)</description>
+			<example></example>
+		</run>
+
+		<runonce>
+			<description>add a line of code ONE RUN for config file (same as entering code at prompt java> </description>
+			<example>runonce i++;</example>
+		</runonce>
+		
+
+
+
+	</defs>
+
+
+		tmp.put("addline", Arrays.asList("add a line of code for config file (same as entering code at prompt)",
+										 "Example: addline i++;"));
+		tmp.put("runonce", Arrays.asList("add a line of code ONE RUN for config file (same as entering code at prompt java> )",
+										 "Example: runonce i++;"));
+
+
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="javarepl" default="buildjar" basedir=".">
+	<property name="dir.root" location="." />
+
+	<target name="buildjar">
+		<exec executable="mvn">
+			<arg value="clean" />
+			<arg value="compile" />
+			<arg value="assembly:single" />
+		</exec>
+		<copy file="target/java-repl-1.0-SNAPSHOT-jar-with-dependencies.jar"
+			tofile="target/java-repl.jar"></copy>
+
+		<echo>JAR CREATED! run with: java -jar target/java-repl.jar</echo>
+	</target>
+</project>
