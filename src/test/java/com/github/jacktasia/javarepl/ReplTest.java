@@ -5,16 +5,16 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
 /**
- * Unit test for simple App.
+ * Unit tests
  */
-public class AppTest extends TestCase {
+public class ReplTest extends TestCase {
 	/**
 	 * Create the test case
 	 * 
 	 * @param testName
 	 *            name of the test case
 	 */
-	public AppTest(String testName) {
+	public ReplTest(String testName) {
 		super(testName);
 	}
 
@@ -22,17 +22,51 @@ public class AppTest extends TestCase {
 	 * @return the suite of tests being tested
 	 */
 	public static Test suite() {
-		return new TestSuite(AppTest.class);
+		return new TestSuite(ReplTest.class);
 	}
 
 	/**
-	 * Rigourous Test :-)
+	 * Tests for help lines.
 	 */
-	public void testApp() {
-		assertTrue(true);
+	public void testCmdHelp() {
+		LineParser lp = new LineParser("h");
+		LineParser lp2 = new LineParser("help");
+
+		assertTrue(lp.isHelp());
+		assertTrue(lp2.isHelp());
 	}
 
-	public void testApp2() {
-		assertTrue(true);
+	/**
+	 * Tests for help lines.
+	 */
+	public void testCmdClear() {
+		LineParser lp = new LineParser("clear");
+
+		assertTrue(lp.isClear());
 	}
+
+	/**
+	 * Tests for addjar lines.
+	 */
+	public void testCmdAddJar() {
+		String path = "/home/jack/a:sdf/sdf.txt";
+		LineParser lp = new LineParser("addjar " + path);
+		assertTrue(lp.isSpaceCmd());
+		assertTrue(lp.getSpaceCmd().equals("addjar"));
+		String[] lpSpaceArgs = lp.getSpaceArgs();
+		assertTrue(lpSpaceArgs[0].equals(path));
+	}
+
+	/**
+	 * Tests for import lines.
+	 */
+	public void testCmdImport() {
+		String path = "java.util.*;";
+		LineParser lp = new LineParser("import " + path);
+		assertTrue(lp.isSpaceCmd());
+		assertTrue(lp.getSpaceCmd().equals("import"));
+		String[] lpSpaceArgs = lp.getSpaceArgs();
+		assertTrue(lpSpaceArgs[0].equals(path));
+	}
+
 }
